@@ -36,6 +36,7 @@ type
     { Private declarations }
     FLogIndent: Integer;
     FFormatSettings: TFormatSettings;
+    procedure LoadImage(const AImageFileName: string; const ADestinationPicture: TPicture);
     procedure BeginLogIndent;
     procedure EndLogIndent;
     function GetLogMessage(const AMessage: string): string;
@@ -99,7 +100,7 @@ begin
   FFormatSettings.ThousandSeparator := ' ';
   FFormatSettings.DecimalSeparator := '.';
 
-  ImageMain.Picture.LoadFromFile(APP_ROOT + TEST_BITMAP_01)
+  LoadImage(APP_ROOT + TEST_BITMAP_01, ImageMain.Picture);
 end;
 
 function TForm14.GetBuildModeString: string;
@@ -135,6 +136,26 @@ begin
   LMaxTime := FormatFloat(FLOAT_FORMAT, MaxValue(ALResultDurationArray),  FFormatSettings);
 
   Result := Format('Min: %sms, Average: %sms, Max: %sms', [LMinTime, LAverageTime, LMaxTime]);
+end;
+
+procedure TForm14.LoadImage(const AImageFileName: string; const ADestinationPicture: TPicture);
+var
+  LFileStream: TFileStream;
+  LWICImage: TWICImage;
+begin
+  LFileStream := TFileStream.Create(AImageFileName, fmOpenRead);
+  try
+    LFileStream.Position := 0;
+    LWICImage := TWICImage.Create;
+    try
+      LWICImage.LoadFromStream(LFileStream);
+      ADestinationPicture.Bitmap.Assign(LWICImage);
+    finally
+      LWICImage.Free;
+    end;
+  finally
+    LFileStream.Free;
+  end;
 end;
 
 procedure TForm14.LogMessage(const AMessage: string);
