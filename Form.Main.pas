@@ -148,6 +148,7 @@ var
   I: Integer;
   LResultArray: TArray<Double>;
 begin
+  Screen.Cursor := crHourGlass;
   SetLength(LResultArray, ARunCount);
 
   LogMessage('Running test: "' + ASender.Caption + '" (' + GetBuildModeString + ')');
@@ -172,6 +173,7 @@ begin
   LogMessage(GetTestDurationLogMessage(LResultArray));
   EndLogIndent;
   LogMessage('');
+  Screen.Cursor := crDefault;
 end;
 
 end.
