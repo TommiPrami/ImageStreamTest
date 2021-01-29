@@ -57,12 +57,13 @@ implementation
 {$R *.dfm}
 
 uses
-  System.Diagnostics, System.Math, RGBStream.Reference, RGBStream.ReferenceWithScanlineHelper;
+  System.Diagnostics, System.Math, RGBStream.Reference, RGBStream.ReferenceWithScanlineHelper,
+  Vcl.Imaging.Jpeg;
 
 
 const
   APP_ROOT = '..\..\';
-  TEST_BITMAP_01 = 'test_bitmap_01.bmp';
+  TEST_BITMAP_01 = 'test_bitmap_01.jpg';
 
 procedure TForm14.BeginLogIndent;
 begin
