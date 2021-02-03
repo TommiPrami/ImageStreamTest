@@ -58,8 +58,7 @@ implementation
 {$R *.dfm}
 
 uses
-  System.Diagnostics, System.Math, RGBStream.Reference, RGBStream.ReferenceWithScanlineHelper,
-  Vcl.Imaging.Jpeg;
+  System.Diagnostics, System.Math, RGBStream.Reference, RGBStream.ReferenceWithScanlineHelper;
 
 
 const
