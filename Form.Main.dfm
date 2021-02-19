@@ -146,15 +146,15 @@ object Form14: TForm14
       OnClick = ButtonReferenceClick
     end
   end
-  object PageControl1: TPageControl
+  object PageControl: TPageControl
     Left = 0
     Top = 0
     Width = 672
     Height = 549
-    ActivePage = TabSheet1
+    ActivePage = TabSheetImage
     Align = alClient
     TabOrder = 1
-    object TabSheet1: TTabSheet
+    object TabSheetImage: TTabSheet
       Caption = 'Image'
       object ImageMain: TImage
         Left = 0

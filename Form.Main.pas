@@ -23,8 +23,8 @@ type
     Button10: TButton;
     ButtonReferenceWithScanlineHelper: TButton;
     ButtonReference: TButton;
-    PageControl1: TPageControl;
-    TabSheet1: TTabSheet;
+    PageControl: TPageControl;
+    TabSheetImage: TTabSheet;
     TabSheetLog: TTabSheet;
     ImageMain: TImage;
     MemoLog: TMemo;
@@ -45,7 +45,6 @@ type
     procedure RunTest(const ASender: TButton; const ATestMethod: TTestMethod; const ARunCount: Integer = 1);
     function GetTestDurationLogMessage(const ALResultDurationArray: TArray<Double>): string;
     function GetBuildModeString: string;
-    // Test Methods
   public
     { Public declarations }
   end;
