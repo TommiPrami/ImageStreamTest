@@ -19,7 +19,7 @@ type
     Button6: TButton;
     Button7: TButton;
     Button8: TButton;
-    Button9: TButton;
+    ButtonOriginalPixelsImplementation: TButton;
     ButtonBitShifter: TButton;
     ButtonReferenceWithScanlineHelper: TButton;
     ButtonReference: TButton;
@@ -36,6 +36,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ButtonRunAllClick(Sender: TObject);
+    procedure ButtonOriginalPixelsImplementationClick(Sender: TObject);
   strict private
     { Private declarations }
     FFormatSettings: TFormatSettings;
@@ -67,7 +68,8 @@ implementation
 {$R *.dfm}
 
 uses
-  System.Diagnostics, System.Math, RGBStream.BitShifter, RGBStream.Reference, RGBStream.ReferenceWithScanlineHelper;
+  System.Diagnostics, System.Math, RGBStream.BitShifter, RGBStream.Reference, RGBStream.ReferenceWithScanlineHelper,
+  RGBStream.OriginalPixelsImplementation;
 
 
 const
@@ -107,6 +109,11 @@ end;
 procedure TForm14.ButtonCloseClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TForm14.ButtonOriginalPixelsImplementationClick(Sender: TObject);
+begin
+  RunTest(Sender as TButton, OriginalPixelsImplementation, GetTestCount);
 end;
 
 procedure TForm14.ButtonReferenceClick(Sender: TObject);

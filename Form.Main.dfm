@@ -105,15 +105,16 @@ object Form14: TForm14
       Caption = 'Button1'
       TabOrder = 7
     end
-    object Button9: TButton
+    object ButtonOriginalPixelsImplementation: TButton
       AlignWithMargins = True
       Left = 4
       Top = 97
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Original Pixels Implementation'
       TabOrder = 8
+      OnClick = ButtonOriginalPixelsImplementationClick
     end
     object ButtonBitShifter: TButton
       AlignWithMargins = True

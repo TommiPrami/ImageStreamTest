@@ -32,9 +32,9 @@ begin
     LLine := ABitmap.Scanline[LY];
     for LX := 0 to LWidth - 1 do
     begin
-      LByteBuffer[LByteCounter] := LLine[LX].R; // RGBColor^.red;
-      LByteBuffer[LByteCounter + 1] := LLine[LX].G; // RGBColor^.green;
-      LByteBuffer[LByteCounter + 2] := LLine[LX].B; // RGBColor^.blue;
+      LByteBuffer[LByteCounter] := LLine[LX].R;
+      LByteBuffer[LByteCounter + 1] := LLine[LX].G;
+      LByteBuffer[LByteCounter + 2] := LLine[LX].B;
       Inc(LByteCounter, 3);
       if LByteCounter >= REFERENCE_BUFFER_SIZE then
       begin

@@ -10,7 +10,8 @@ uses
   RGBStream.CommonTypes in 'RGBStream.CommonTypes.pas',
   Bitmap.ScanlineHelper in 'Bitmap.ScanlineHelper.pas',
   RGBStream.ReferenceWithScanlineHelper in 'RGBStream.ReferenceWithScanlineHelper.pas',
-  RGBStream.BitShifter in 'RGBStream.BitShifter.pas';
+  RGBStream.BitShifter in 'RGBStream.BitShifter.pas',
+  RGBStream.OriginalPixelsImplementation in 'RGBStream.OriginalPixelsImplementation.pas';
 
 {$R *.res}
 
