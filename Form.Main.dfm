@@ -151,7 +151,7 @@ object Form14: TForm14
     end
     object CheckBoxValidateStream: TCheckBox
       Left = 1
-      Top = 342
+      Top = 369
       Width = 227
       Height = 17
       Align = alTop
@@ -159,6 +159,17 @@ object Form14: TForm14
       Checked = True
       State = cbChecked
       TabOrder = 12
+    end
+    object EditRunCount: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 345
+      Width = 221
+      Height = 21
+      Align = alTop
+      NumbersOnly = True
+      TabOrder = 13
+      Text = '1'
     end
   end
   object PageControl: TPageControl
@@ -195,6 +206,7 @@ object Form14: TForm14
         Font.Name = 'Courier New'
         Font.Style = []
         ParentFont = False
+        ScrollBars = ssBoth
         TabOrder = 0
       end
     end

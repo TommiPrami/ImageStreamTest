@@ -29,6 +29,7 @@ type
     ImageMain: TImage;
     MemoLog: TMemo;
     CheckBoxValidateStream: TCheckBox;
+    EditRunCount: TEdit;
     procedure ButtonBitShifterClick(Sender: TObject);
     procedure ButtonCloseClick(Sender: TObject);
     procedure ButtonReferenceClick(Sender: TObject);
@@ -190,8 +191,7 @@ end;
 
 function TForm14.GetTestCount: Integer;
 begin
-  // TODO: configurable From GUI
-  Result := 5;
+  Result := StrToIntDef(EditRunCount.Text, 1);
 end;
 
 function TForm14.GetTestDurationLogMessage(const ALResultDurationArray: TArray<Double>): string;
