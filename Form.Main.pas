@@ -9,7 +9,7 @@ uses
 type
   TTestMethod = procedure(const ABitmap: TBitmap; const ADestinationStream: TStream);
 
-  TForm14 = class(TForm)
+  TFormMain = class(TForm)
     PanelRight: TPanel;
     ButtonClose: TButton;
     ButtonRunAll: TButton;
@@ -62,7 +62,7 @@ type
   end;
 
 var
-  Form14: TForm14;
+  FormMain: TFormMain;
 
 implementation
 
@@ -77,17 +77,17 @@ const
   APP_ROOT = '..\..\';
   TEST_BITMAP_01 = 'test_bitmap_01.jpg';
 
-procedure TForm14.BeginLogIndent;
+procedure TFormMain.BeginLogIndent;
 begin
   Inc(FLogIndent);
 end;
 
-procedure TForm14.ButtonReferenceWithScanlineHelperClick(Sender: TObject);
+procedure TFormMain.ButtonReferenceWithScanlineHelperClick(Sender: TObject);
 begin
   RunTest(Sender as TButton, ReferenceWithScanlineHelper, GetTestCount)
 end;
 
-procedure TForm14.ButtonRunAllClick(Sender: TObject);
+procedure TFormMain.ButtonRunAllClick(Sender: TObject);
 var
   I: Integer;
   LCurrentCotnrol: TControl;
@@ -102,27 +102,27 @@ begin
   end;
 end;
 
-procedure TForm14.ButtonBitShifterClick(Sender: TObject);
+procedure TFormMain.ButtonBitShifterClick(Sender: TObject);
 begin
   RunTest(Sender as TButton, BitShifter, GetTestCount);
 end;
 
-procedure TForm14.ButtonCloseClick(Sender: TObject);
+procedure TFormMain.ButtonCloseClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TForm14.ButtonOriginalPixelsImplementationClick(Sender: TObject);
+procedure TFormMain.ButtonOriginalPixelsImplementationClick(Sender: TObject);
 begin
   RunTest(Sender as TButton, OriginalPixelsImplementation, GetTestCount);
 end;
 
-procedure TForm14.ButtonReferenceClick(Sender: TObject);
+procedure TFormMain.ButtonReferenceClick(Sender: TObject);
 begin
   RunTest(Sender as TButton, ReferenceImplementation, GetTestCount)
 end;
 
-procedure TForm14.EndLogIndent;
+procedure TFormMain.EndLogIndent;
 begin
   Dec(FLogIndent);
 
@@ -130,7 +130,7 @@ begin
     FLogIndent := 0;
 end;
 
-procedure TForm14.FormCreate(Sender: TObject);
+procedure TFormMain.FormCreate(Sender: TObject);
 begin
   FFormatSettings := TFormatSettings.Create;
   FFormatSettings.ThousandSeparator := ' ';
@@ -139,27 +139,27 @@ begin
   LoadImage(APP_ROOT + TEST_BITMAP_01, ImageMain.Picture);
 end;
 
-procedure TForm14.FormDestroy(Sender: TObject);
+procedure TFormMain.FormDestroy(Sender: TObject);
 begin
   if Assigned(FReferenceStream) then
     FReferenceStream.Free;
 end;
 
-function TForm14.FormatFloat(const AValue: Double): string;
+function TFormMain.FormatFloat(const AValue: Double): string;
 const
   FLOAT_FORMAT = '#,0.000;-#,0.000;0.000';
 begin
   Result := System.SysUtils.FormatFloat(FLOAT_FORMAT, AValue,  FFormatSettings);
 end;
 
-function TForm14.FormatInt(const AValue: Int64): string;
+function TFormMain.FormatInt(const AValue: Int64): string;
 const
   FLOAT_INT = '#,0;-#,0;0';
 begin
   Result := System.SysUtils.FormatFloat(FLOAT_INT, AValue,  FFormatSettings);
 end;
 
-function TForm14.GetAndCacheReferenceStream: TMemoryStream;
+function TFormMain.GetAndCacheReferenceStream: TMemoryStream;
 begin
   if not Assigned(FReferenceStream) then
     FReferenceStream := TMemoryStream.Create;
@@ -170,7 +170,7 @@ begin
   Result := FReferenceStream;
 end;
 
-function TForm14.GetBuildModeString: string;
+function TFormMain.GetBuildModeString: string;
 begin
   {$IFDEF DEBUG}
   Result := 'DEBUG build'
@@ -179,22 +179,22 @@ begin
   {$ENDIF}
 end;
 
-function TForm14.GetLogMessage(const AMessage: string): string;
+function TFormMain.GetLogMessage(const AMessage: string): string;
 begin
   Result := StringOfChar(' ', FLogIndent * 2) + AMessage;
 end;
 
-function TForm14.GetTestBitmap: TBitmap;
+function TFormMain.GetTestBitmap: TBitmap;
 begin
   Result := ImageMain.Picture.Bitmap;
 end;
 
-function TForm14.GetTestCount: Integer;
+function TFormMain.GetTestCount: Integer;
 begin
   Result := StrToIntDef(EditRunCount.Text, 1);
 end;
 
-function TForm14.GetTestDurationLogMessage(const ALResultDurationArray: TArray<Double>): string;
+function TFormMain.GetTestDurationLogMessage(const ALResultDurationArray: TArray<Double>): string;
 var
   LMinTime: string;
   LMaxTime: string;
@@ -207,7 +207,7 @@ begin
   Result := Format('Min: %sms, Average: %sms, Max: %sms', [LMinTime, LAverageTime, LMaxTime]);
 end;
 
-procedure TForm14.LoadImage(const AImageFileName: string; const ADestinationPicture: TPicture);
+procedure TFormMain.LoadImage(const AImageFileName: string; const ADestinationPicture: TPicture);
 var
   LFileStream: TFileStream;
   LWICImage: TWICImage;
@@ -227,7 +227,7 @@ begin
   end;
 end;
 
-procedure TForm14.LogMessage(const AMessage: string);
+procedure TFormMain.LogMessage(const AMessage: string);
 begin
   MemoLog.Lines.Add(GetLogMessage(AMessage));
 end;
@@ -271,7 +271,7 @@ begin
   Screen.Cursor := crDefault;
 end;
 
-procedure TForm14.ValidateStream(const ATestMethod: TTestMethod);
+procedure TFormMain.ValidateStream(const ATestMethod: TTestMethod);
 var
   LReferenceStream: TMemoryStream;
   LTestStream: TMemoryStream;

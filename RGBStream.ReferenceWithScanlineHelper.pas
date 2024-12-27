@@ -18,10 +18,10 @@ const
 var
   LLInePointer: Pointer;
   LLine: PRGB32Array;
-  LX: Longint;
+  LX: LongInt;
   LByteBuffer: array [0 .. REFERENCE_BUFFER_SIZE] of Byte;
   LByteCounter: Integer;
-  LWidth: Longint;
+  LWidth: LongInt;
   LScanliner: TBitmapScanlineHelper;
 begin
   LScanliner := TBitmapScanlineHelper.Create(ABitmap);

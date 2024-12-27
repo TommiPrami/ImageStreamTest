@@ -5,7 +5,7 @@ uses
   FastMM4,
   {$ENDIF }
   Vcl.Forms,
-  Form.Main in 'Form.Main.pas' {Form14},
+  Form.Main in 'Form.Main.pas' {FormMain},
   RGBStream.Reference in 'RGBStream.Reference.pas',
   RGBStream.CommonTypes in 'RGBStream.CommonTypes.pas',
   Bitmap.ScanlineHelper in 'Bitmap.ScanlineHelper.pas',
@@ -18,6 +18,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm14, Form14);
+  Application.CreateForm(TFormMain, FormMain);
   Application.Run;
 end.

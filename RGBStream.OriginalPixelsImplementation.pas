@@ -20,13 +20,13 @@ procedure OriginalPixelsImplementation(const ABitmap: TBitmap; const ADestinatio
 const
   BufSize = 30000;
 var
-  k, J: Longint;
+  k, J: LongInt;
   PColor: TColor;
   RGBColor: ^TRGBColor;
   bbuff: array [0 .. BufSize] of Byte;
   BP: Integer;
   // OutBuff: string;
-  xdim, ydim: Longint;
+  xdim, ydim: LongInt;
 begin
   xdim := ABitmap.Width;
   ydim := ABitmap.Height;

@@ -1,4 +1,4 @@
-object Form14: TForm14
+object FormMain: TFormFormMain
   Left = 0
   Top = 0
   Caption = 'FormMain'
