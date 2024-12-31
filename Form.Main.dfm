@@ -45,64 +45,64 @@ object FormMain: TFormFormMain
       TabOrder = 1
       OnClick = ButtonRunAllClick
     end
-    object Button3: TButton
+    object ButtonThird: TButton
       AlignWithMargins = True
       Left = 4
       Top = 283
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Button 3.'
       TabOrder = 2
     end
-    object Button4: TButton
+    object ButtonFourth: TButton
       AlignWithMargins = True
       Left = 4
       Top = 252
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Button 4.'
       TabOrder = 3
     end
-    object Button5: TButton
+    object ButtonFifth: TButton
       AlignWithMargins = True
       Left = 4
       Top = 221
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Button 5.'
       TabOrder = 4
     end
-    object Button6: TButton
+    object ButtonSixth: TButton
       AlignWithMargins = True
       Left = 4
       Top = 190
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Button 6.'
       TabOrder = 5
     end
-    object Button7: TButton
+    object ButtonSeventh: TButton
       AlignWithMargins = True
       Left = 4
       Top = 159
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Button 7.'
       TabOrder = 6
     end
-    object Button8: TButton
+    object ButtonEighth: TButton
       AlignWithMargins = True
       Left = 4
       Top = 128
       Width = 221
       Height = 25
       Align = alTop
-      Caption = 'Button1'
+      Caption = 'Button 8.'
       TabOrder = 7
     end
     object ButtonOriginalPixelsImplementation: TButton

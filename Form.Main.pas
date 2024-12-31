@@ -13,12 +13,12 @@ type
     PanelRight: TPanel;
     ButtonClose: TButton;
     ButtonRunAll: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    Button5: TButton;
-    Button6: TButton;
-    Button7: TButton;
-    Button8: TButton;
+    ButtonThirdth: TButton;
+    ButtonFourth: TButton;
+    ButtonFifth: TButton;
+    ButtonSixth: TButton;
+    ButtonSeventh: TButton;
+    ButtonEighth: TButton;
     ButtonOriginalPixelsImplementation: TButton;
     ButtonBitShifter: TButton;
     ButtonReferenceWithScanlineHelper: TButton;
