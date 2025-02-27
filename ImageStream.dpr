@@ -6,7 +6,7 @@ uses
   {$ENDIF }
   Vcl.Forms,
   Form.Main in 'Form.Main.pas' {FormMain},
-  RGBStream.Reference in 'RGBStream.Reference.pas',
+  RGBStream.ReferenceImplementation in 'RGBStream.ReferenceImplementation.pas',
   RGBStream.CommonTypes in 'RGBStream.CommonTypes.pas',
   Bitmap.ScanlineHelper in 'Bitmap.ScanlineHelper.pas',
   RGBStream.ReferenceWithScanlineHelper in 'RGBStream.ReferenceWithScanlineHelper.pas',

@@ -1,4 +1,4 @@
-﻿unit RGBStream.Reference;
+﻿unit RGBStream.ReferenceImplementation;
 
 interface
 
