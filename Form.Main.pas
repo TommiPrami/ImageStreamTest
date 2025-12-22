@@ -90,15 +90,15 @@ end;
 procedure TFormMain.ButtonRunAllClick(Sender: TObject);
 var
   I: Integer;
-  LCurrentCotnrol: TControl;
+  LCurrentControl: TControl;
 begin
   for I := 0 to PanelRight.ControlCount - 1 do
   begin
     LCurrentCotnrol := PanelRight.Controls[I];
 
-    if (LCurrentCotnrol is TButton) and (LCurrentCotnrol <> ButtonClose) and (LCurrentCotnrol <> ButtonRunAll)
-      and Assigned(TButton(LCurrentCotnrol).OnClick) then
-      TButton(LCurrentCotnrol).OnClick(LCurrentCotnrol);
+    if (LCurrentControl is TButton) and (LCurrentControl <> ButtonClose) and (LCurrentControl <> ButtonRunAll)
+      and Assigned(TButton(LCurrentControl).OnClick) then
+      TButton(LCurrentControl).OnClick(LCurrentControl);
   end;
 end;
 
