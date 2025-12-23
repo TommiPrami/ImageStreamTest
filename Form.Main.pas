@@ -94,7 +94,7 @@ var
 begin
   for I := 0 to PanelRight.ControlCount - 1 do
   begin
-    LCurrentCotnrol := PanelRight.Controls[I];
+    LCurrentControl := PanelRight.Controls[I];
 
     if (LCurrentControl is TButton) and (LCurrentControl <> ButtonClose) and (LCurrentControl <> ButtonRunAll)
       and Assigned(TButton(LCurrentControl).OnClick) then
