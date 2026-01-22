@@ -12,7 +12,7 @@ implementation
 uses
   RGBStream.CommonTypes;
 
-  // This Byte order BitShifter thingy from Anders Melander
+  // This Byte-order BitShifter thingy from Anders Melander
 function ABGR2RGB(const ABGR: UInt32): TColor; inline;
 begin
   Result := ((ABGR and $00FF0000) shr 16) or (ABGR and $0000FF00) or ((ABGR and $000000FF) shl 16);
