@@ -84,7 +84,7 @@ end;
 
 procedure TFormMain.ButtonReferenceWithScanlineHelperClick(Sender: TObject);
 begin
-  RunTest(Sender as TButton, ReferenceWithScanlineHelper, GetTestCount)
+  RunTest(Sender as TButton, ReferenceWithScanlineHelper, GetTestCount);
 end;
 
 procedure TFormMain.ButtonRunAllClick(Sender: TObject);
@@ -119,7 +119,7 @@ end;
 
 procedure TFormMain.ButtonReferenceClick(Sender: TObject);
 begin
-  RunTest(Sender as TButton, ReferenceImplementation, GetTestCount)
+  RunTest(Sender as TButton, ReferenceImplementation, GetTestCount);
 end;
 
 procedure TFormMain.EndLogIndent;
@@ -173,9 +173,9 @@ end;
 function TFormMain.GetBuildModeString: string;
 begin
   {$IFDEF DEBUG}
-  Result := 'DEBUG build'
+  Result := 'DEBUG build';
   {$ELSE}
-  Result := 'RELEASE build'
+  Result := 'RELEASE build';
   {$ENDIF}
 end;
 
